@@ -23,12 +23,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Prepare site files
+        run: |
+          mkdir -p _site/assets
+          cp index.html style.css admin.css me.html \
+            portfolio-admin.js portfolio-public.js site-config.js \
+            README.md .nojekyll _site/
+          cp assets/* _site/assets/
+          ls -la _site _site/assets
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

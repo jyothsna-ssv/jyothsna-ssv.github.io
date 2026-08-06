@@ -74,6 +74,7 @@
           <a class="nav-link" href="#education">Education</a>
           <a class="nav-link" href="#accomplishments">Accomplishments</a>
           <a class="nav-link" href="#activities">Activities</a>
+          <a class="nav-link" href="#beyond">Beyond</a>
           <a class="nav-link" href="#contact">Contact</a>
         </div>
       </div>
@@ -313,7 +314,7 @@
             <h3>Software Engineer - Community Dreams Foundation</h3>
             <p class="meta">July 2025 - July 2026</p>
             <div class="experience-copy">
-              <p>
+                            <p>
                 Took a commercial cleaning company's platform from a set of stakeholder conversations to a live product, three separate portals for customers, admins, and staff. React, TypeScript, Supabase, PostgreSQL, Stripe. I ended up doing more than engineering here: turning vague asks into sprint plans, going between dev, QA, security, and the business folks when priorities clashed. It's the job that made me realize I want to stay hands-on with code but also own the messier parts around it.
               </p>
             </div>
@@ -363,14 +364,12 @@
           <div class="project-card-inner">
             <div class="project-card-face project-card-front">
               <h3>ChopURL</h3>
-              <p><strong>Short links, thoughtfully engineered.</strong></p>
-              <p>ChopURL is a full-stack tool for turning long, awkward URLs into clean, shareable links. Anyone can shorten a URL, while signed-in users get a private dashboard to create custom aliases, monitor clicks, and manage their links.</p>
-              <p>What began as a simple URL shortener became an exploration of real backend challenges: preventing duplicate aliases, preserving click counts during simultaneous requests, separating one user’s data from another’s, and automatically expiring old records.</p>
-              <p>I built the API with FastAPI and Redis, the interface with Vue 3, and authentication with Supabase. The project is deployed using Vercel and Render.</p>
+              <p>A URL shortener, with the actual work hidden underneath. Anyone can shorten a link. Sign in and you get a dashboard: custom aliases, click counts, the ability to see and manage what you've made.</p>
+              <p>Most of the effort went into making the backend not lie to you. Two people trying to claim the same alias at once. Click counts staying accurate when requests overlap. One user never seeing another user's links. Old links expiring on their own instead of piling up. FastAPI and Redis run the API, Vue 3 is the frontend, Supabase handles auth, and it's deployed across Vercel and Render.</p>
               <p class="meta"><strong>Built with:</strong> FastAPI · Redis · Vue 3 · Supabase Auth · Docker</p>
               <div class="links">
-                <a href="https://chop-url.vercel.app/" target="_blank" rel="noopener">Explore the live app</a>
-                <a href="https://github.com/jyothsna-ssv/ChopURL" target="_blank" rel="noopener">View the source</a>
+                <a class="project-link project-link--live" href="https://chop-url.vercel.app/" target="_blank" rel="noopener">Live app <span aria-hidden="true">→</span></a>
+                <a class="project-link project-link--github" href="https://github.com/jyothsna-ssv/ChopURL" target="_blank" rel="noopener">GitHub <span aria-hidden="true">→</span></a>
               </div>
             </div>
             <div class="project-card-face project-card-back" aria-hidden="true" inert>
@@ -383,13 +382,11 @@
           <div class="project-card-inner">
             <div class="project-card-face project-card-front">
               <h3>ArchAI</h3>
-              <p><strong>Describe the system. See the architecture.</strong></p>
-              <p>ArchAI is a full-stack tool that transforms natural-language system requirements into clear, downloadable AWS architecture diagrams. Users describe the application they want to build, and ArchAI identifies the requested services, generates a structured architecture, validates its components and relationships, and renders the result as a professional PNG.</p>
-              <p>What began as a diagram generator became an exploration of a larger AI engineering challenge: model output can look correct while still omitting services, referencing invalid nodes, exposing internal class names, or producing disconnected architectures. I built a validation and repair pipeline that checks every supported requested service before allowing the diagram to be rendered.</p>
-              <p>I built the interface with React and TypeScript, the API with FastAPI and Pydantic, and the AI workflow with OpenAI structured output. Diagrams are rendered deterministically using Python Diagrams and Graphviz, while Docker provides a reproducible local setup. ArchAI runs locally and does not provision AWS resources.</p>
+              <p>You describe a system in plain English, ArchAI gives you back the AWS diagram. Say "a web app with a load balancer, two EC2 instances, and an RDS database" and it figures out the services, builds the architecture, checks it, and renders a PNG.</p>
+              <p>The diagramming part turned out to be the easy part. The real issue is that model output can look convincing while quietly being wrong, dropping a service you asked for, pointing to a node that was never created, leaking an internal class name into what should be a clean label. So there's a validation and repair step that confirms every requested service actually made it in before anything gets rendered. React and TypeScript on the frontend, FastAPI and Pydantic for the API, OpenAI for the structured output, Python Diagrams and Graphviz doing the actual drawing.</p>
               <p class="meta"><strong>Built with:</strong> React · TypeScript · FastAPI · Pydantic · OpenAI API · Python Diagrams · Graphviz · Docker</p>
               <div class="links">
-                <a href="https://github.com/jyothsna-ssv/ArchAI" target="_blank" rel="noopener">View the source</a>
+                <a class="project-link project-link--github" href="https://github.com/jyothsna-ssv/ArchAI" target="_blank" rel="noopener">GitHub <span aria-hidden="true">→</span></a>
               </div>
             </div>
             <div class="project-card-face project-card-back" aria-hidden="true" inert>
@@ -398,14 +395,20 @@
           </div>
         </div>
 
-        <div class="project-card reveal project-enter">
-          <h3>CrowdShield: Real-Time Content Moderation System</h3>
-          <p>Built a GenAI-powered distributed moderation system with an async Redis-backed queue and worker pipeline that decouples ingestion from AI processing for reliability under burst traffic.</p>
-          <p>Integrated OpenAI API scoring, retry logic, structured audit logging, and PostgreSQL schemas to enable traceable AI-driven classification at scale.</p>
-          <p>Added WebSocket-based real-time monitoring and an admin dashboard for live visibility into moderation workflows.</p>
-          <p class="meta"><strong>Tools:</strong> Spring Boot, Redis, PostgreSQL, OpenAI, WebSockets</p>
-          <div class="links">
-            <a href="https://github.com/jyothsna-ssv/CrowdShield" target="_blank" rel="noopener">GitHub</a>
+        <div class="project-card project-card--flippable reveal project-enter" data-flip-card tabindex="0" role="button" aria-label="Show CrowdShield project preview" aria-pressed="false">
+          <div class="project-card-inner">
+            <div class="project-card-face project-card-front">
+              <h3>CrowdShield</h3>
+              <p>Content moderation that doesn't choke when traffic spikes. Submissions land in a Redis queue, workers pick them up and send them to OpenAI for scoring, so a burst of incoming content never blocks on an API call.</p>
+              <p>If OpenAI fails mid-request, retry logic catches it. Every decision gets written to PostgreSQL so there's a record of why something was flagged. Admins watch it happen live through a WebSocket dashboard instead of refreshing a page to check status.</p>
+              <p class="meta"><strong>Tools:</strong> Spring Boot · Redis · PostgreSQL · OpenAI · WebSockets</p>
+              <div class="links">
+                <a class="project-link project-link--github" href="https://github.com/jyothsna-ssv/CrowdShield" target="_blank" rel="noopener">GitHub <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="project-card-face project-card-back" aria-hidden="true" inert>
+              <img src="assets/CS-flip.png" alt="CrowdShield project preview" />
+            </div>
           </div>
         </div>
 
@@ -415,40 +418,129 @@
 
   <!-- EDUCATION -->
   <section id="education" class="section">
-    <div class="section-inner glass-card">
+    <div class="section-inner">
       <h2 class="reveal from-up" style="--d: 0ms;">Education</h2>
 
-      <div class="edu reveal from-up" style="--d: 140ms;">
-        <h3>Master of Science in Computer Science - New Jersey Institute of Technology</h3>
-        <p class="meta">New Jersey, USA • Jan 2024 - May 2025</p>
-      </div>
+      <div class="experience-list">
+        <article class="experience-card glass-card reveal from-up" style="--d: 140ms;">
+          <div class="experience-logo-wrap">
+            <img class="company-logo" src="assets/njit.jpg" alt="NJIT logo" />
+          </div>
+          <div class="experience-body">
+            <h3>New Jersey Institute of Technology</h3>
+            <p class="experience-company">New Jersey, USA</p>
+            <p class="meta">Master of Science (M.S.), Computer Science</p>
+            <p class="meta">Jan 2024 - May 2025</p>
+            <div class="experience-copy">
+              <p>
+                At NJIT, I explored both the technical and professional sides of computer science through a mix of theory, hands-on learning, and campus involvement. Beyond coursework, I engaged with coding clubs, strategic tech events, and the Career Development Services, which helped shape my approach to problem-solving and career growth. Courses like Data Structures &amp; Algorithms and AI stood out for their practical depth and challenge, making learning engaging while strengthening my thinking about efficiency, logic, and real-world applications.
+              </p>
+            </div>
+          </div>
+        </article>
 
-      <div class="edu reveal from-up" style="--d: 280ms;">
-        <h3>Bachelor of Technology in Computer Science - Jawaharlal Nehru Technological University Hyderabad</h3>
-        <p class="meta">Hyderabad, India • Jun 2018 - Aug 2022</p>
+        <article class="experience-card glass-card reveal from-up" style="--d: 280ms;">
+          <div class="experience-logo-wrap">
+            <img class="company-logo" src="assets/hitam.jpg" alt="HITAM logo" />
+          </div>
+          <div class="experience-body">
+            <h3>Hyderabad Institute of Technology and Management</h3>
+            <p class="experience-company">Hyderabad, India</p>
+            <p class="meta experience-affiliation">Under Affiliation of Jawaharlal Nehru Technological University Hyderabad</p>
+            <p class="meta">Bachelor of Technology (B.Tech.), Computer Science</p>
+            <p class="meta">June 2018 - Aug 2022</p>
+            <div class="experience-copy">
+              <p>
+                At HITAM, I complemented my computer science studies with active leadership and community involvement. I served as a Class Representative and Student HOD (CSE), working closely with students and faculty to improve communication, learning quality, and academic coordination. I also coordinated the Coding Club and helped organize hackathons, gaining hands-on experience in mentoring peers, evaluating ideas, and executing initiatives from planning to delivery.
+              </p>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ACCOMPLISHMENTS -->
   <section id="accomplishments" class="section">
-    <div class="section-inner glass-card">
-      <h2 class="reveal from-up" style="--d:0ms;">Accomplishments</h2>
-
-      <div class="timeline-item reveal from-up" style="--d: 140ms;">
-        <h3>National Women Empowerment Award - AICTE LILAVATI</h3>
-        <p class="meta">Apr 2021</p>
-        <ul>
-          <li>Honored nationally for leading digital-literacy initiatives empowering 200+ women.</li>
-        </ul>
+    <div class="section-inner">
+      <div class="accomplishments-header reveal from-up" style="--d: 0ms;">
+        <p class="section-eyebrow">Recognition</p>
+        <h2>Accomplishments</h2>
+        <p class="section-description">
+          Recognition earned through community impact, academic leadership,
+          and organizational responsibility.
+        </p>
       </div>
 
-      <div class="timeline-item reveal from-up" style="--d: 280ms;">
-        <h3>Academic Excellence & Leadership Distinction</h3>
-        <p class="meta">Mar 2021</p>
-        <ul>
-          <li>Recognized for academic achievement and leadership in fostering innovation and student collaboration.</li>
-        </ul>
+      <div class="awards-grid reveal-stagger" data-stagger="140">
+        <article class="award-card glass-card reveal from-up" style="--d: 120ms;">
+          <div class="award-card-top">
+            <span class="award-category">Community Impact</span>
+            <span class="award-year">Apr 2021</span>
+          </div>
+          <div class="award-number" aria-hidden="true">01</div>
+          <h3>National Women Empowerment Award</h3>
+          <p class="award-organization">AICTE LILAVATI</p>
+          <p class="award-description">
+            2nd Runner-up in the Literacy category, selected from 456 national entries for leading digital-literacy initiatives that empowered 200+ women - the only recognized institute from Telangana &amp; Andhra Pradesh.
+          </p>
+
+          <button
+            type="button"
+            class="award-link"
+            data-gallery='[{"src":"assets/AICTE-certificate.png","title":"AICTE Lilavati Award Certificate"},{"src":"assets/aicte-award-collage.png","title":"AICTE Lilavati Award - Team WE-LIT"}]'
+            data-credential-title="National Women Empowerment Award"
+          >
+            View
+            <span aria-hidden="true">→</span>
+          </button>
+        </article>
+
+        <article class="award-card glass-card reveal from-up" style="--d: 220ms;">
+          <div class="award-card-top">
+            <span class="award-category">Academic Leadership</span>
+            <span class="award-year">Mar 2021</span>
+          </div>
+          <div class="award-number" aria-hidden="true">02</div>
+          <h3>Best Student of the Department</h3>
+          <p class="award-organization">Academic Excellence &amp; Leadership Distinction</p>
+          <p class="award-description">
+            Recognized for academic achievement and leadership in fostering innovation and student collaboration.
+          </p>
+          <button
+            type="button"
+            class="award-link"
+            data-credential="assets/best-std-award.jpg"
+            data-credential-type="image"
+            data-credential-title="Best Student of the Department"
+          >
+            View
+            <span aria-hidden="true">→</span>
+          </button>
+        </article>
+
+        <article class="award-card glass-card reveal from-up" style="--d: 300ms;">
+          <div class="award-card-top">
+            <span class="award-category">Organizational Leadership</span>
+            <span class="award-year">2020 - 2021</span>
+          </div>
+          <div class="award-number" aria-hidden="true">03</div>
+          <h3>Transparency in Administration &amp; Most Enriched Toastmaster</h3>
+          <p class="award-organization">Toastmasters International</p>
+          <p class="award-description">
+            Recognized for administrative compliance, mentoring, and operational clarity as Club Secretary of HITAM Toastmasters.
+          </p>
+          <button
+            type="button"
+            class="award-link"
+            data-credential="assets/Transparency%20in%20Administation.jpg"
+            data-credential-type="image"
+            data-credential-title="Transparency in Administration"
+          >
+            View
+            <span aria-hidden="true">→</span>
+          </button>
+        </article>
       </div>
     </div>
   </section>
@@ -456,16 +548,200 @@
   <!-- EXTRA CURRICULAR ACTIVITIES -->
   <section id="activities" class="section">
     <div class="section-inner glass-card">
-      <h2 class="reveal from-up" style="--d: 0ms;">Leadership & Activities</h2>
+      <h2 class="reveal from-up" style="--d: 0ms;">Leadership &amp; Activities</h2>
 
       <div class="timeline-item reveal from-up" style="--d: 140ms;">
-        <h3>Student Leadership & Public Speaking</h3>
-        <p class="meta">Hyderabad Institute of Technology and Management</p>
+        <h3>Student Leadership &amp; Public Speaking</h3>
+        <p class="meta">Hyderabad Institute of Technology and Management • 2018 - 2022</p>
         <ul>
           <li>Served as Class Representative and Student HOD for Computer Science, improving communication between students and faculty.</li>
-          <li>Coordinated coding-club activities and helped organize hackathons, mentoring peers and supporting idea evaluation from planning to delivery.</li>
-          <li>Use public speaking and curiosity-driven exploration to connect technical ideas with people and everyday observations.</li>
+          <li>Coordinated coding-club activities and organized HackYourPath 3.0, a 24-hour hackathon - managing registrations, shortlisting ideas for feasibility, and mentoring teams from pitch to delivery.</li>
+          <li>Used public speaking and curiosity-driven exploration to connect technical ideas with people and everyday observations.</li>
         </ul>
+      </div>
+
+      <div class="timeline-item reveal from-up" style="--d: 260ms;">
+        <h3>Club Secretary - HITAM Toastmasters</h3>
+        <p class="meta">Hyderabad Institute of Technology and Management</p>
+        <ul>
+          <li>Maintained club records, handled correspondence, and took minutes at club and executive-committee meetings.</li>
+          <li>Kept membership rosters and officer lists current with Toastmasters International and tracked member performance.</li>
+        </ul>
+
+        <button
+          type="button"
+          class="award-link"
+          style="margin-top: 10px;"
+          data-gallery='[{"src":"assets/toastmasters-excom.png","title":"HITAM Toastmasters Excom 2020 - 2021"},{"src":"assets/toastmasters-roleplayer.png","title":"Best Long-time Roleplayer - Meeting 76"}]'
+          data-credential-title="HITAM Toastmasters"
+        >
+          View
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <div class="timeline-item reveal from-up" style="--d: 380ms;">
+        <h3>Secretary - IEEE Student Chapter</h3>
+        <p class="meta">Hyderabad Institute of Technology and Management</p>
+        <ul>
+          <li>Organized IEEE Day, coordinating a poster presentation, a mini-project hackathon, an essay-writing contest, and an open mic.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal from-up" style="--d: 500ms;">
+        <h3>Career Assistant</h3>
+        <p class="meta">Career Development Service (NJIT)</p>
+        <ul>
+          <li>Led career workshops and 1:1 advising, supporting 200+ students in resume building, interviews, and job search readiness.</li>
+        </ul>
+        <button
+          type="button"
+          class="award-link"
+          style="margin-top: 10px;"
+          data-credential="assets/CDS.JPG"
+          data-credential-type="image"
+          data-credential-title="Career Assistant - NJIT CDS"
+        >
+          View
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND THE CODE -->
+  <section id="beyond" class="section">
+    <div class="section-inner">
+      <div class="accomplishments-header reveal from-up" style="--d: 0ms;">
+        <p class="section-eyebrow">Beyond the Code</p>
+        <h2>Outside the Screen</h2>
+        <p class="section-description">
+          The interests that shape how I observe, think, and work.
+        </p>
+      </div>
+
+      <div class="beyond-grid reveal-stagger" data-stagger="120">
+        <article class="beyond-card glass-card reveal from-up" style="--d: 100ms;">
+          <p class="beyond-label">01</p>
+          <h3>Photography</h3>
+          <p>
+            Finding interesting details in ordinary places and capturing moments from a different perspective.
+          </p>
+          <a class="award-link" href="#lens">
+            View gallery
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="beyond-card glass-card reveal from-up" style="--d: 180ms;">
+          <p class="beyond-label">02</p>
+          <h3>Karate</h3>
+          <p>
+            Training in discipline, patience, and staying composed under pressure.
+          </p>
+          <button
+            type="button"
+            class="award-link"
+            data-gallery='[{"src":"assets/karate-shodan.png","title":"Karate Shodan - Black Belt"},{"src":"assets/karate-nidan.png","title":"Karate Nidan - Black Belt"}]'
+            data-credential-title="Karate Belts"
+          >
+            View
+            <span aria-hidden="true">→</span>
+          </button>
+        </article>
+
+        <article class="beyond-card glass-card reveal from-up" style="--d: 260ms;">
+          <p class="beyond-label">03</p>
+          <h3>Public Speaking</h3>
+          <p>
+            Turning ideas into clear conversations through presentations, workshops, and Toastmasters.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- THROUGH MY LENS -->
+  <section id="lens" class="section">
+    <div class="section-inner">
+      <div class="accomplishments-header reveal from-up" style="--d: 0ms;">
+        <h2>Through My Lens</h2>
+        <p class="section-description">
+          A small collection of moments, places, and details that made me pause.
+        </p>
+      </div>
+
+      <div class="lens-carousel reveal from-up" style="--d: 140ms;" data-lens-carousel>
+        <div class="lens-stage">
+          <button type="button" class="lens-nav lens-nav-prev" data-lens-prev aria-label="Previous photo">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <button type="button" class="lens-frame" data-lens-open aria-label="Enlarge current photo">
+            <img
+              id="lensImage"
+              src="assets/clicks/g1.jpg"
+              alt="Celestron telescope angled toward a bright sun over a grassy field"
+              width="900"
+              height="520"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </button>
+
+          <button type="button" class="lens-nav lens-nav-next" data-lens-next aria-label="Next photo">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <div class="lens-counter" data-lens-counter aria-live="polite">1 / 17</div>
+        </div>
+
+        <script type="application/json" data-lens-images>
+[
+          "assets/clicks/g1.jpg",
+          "assets/clicks/g2.jpg",
+          "assets/clicks/g3.jpg",
+          "assets/clicks/g4.jpg",
+          "assets/clicks/g5.jpg",
+          "assets/clicks/g6.jpg",
+          "assets/clicks/g7.jpg",
+          "assets/clicks/g8.jpg",
+          "assets/clicks/g9.jpg",
+          "assets/clicks/g10.jpg",
+          "assets/clicks/g11.jpg",
+          "assets/clicks/g12.jpg",
+          "assets/clicks/g13.jpg",
+          "assets/clicks/g14.jpg",
+          "assets/clicks/g15.jpg",
+          "assets/clicks/g16.jpg",
+          "assets/clicks/g17.jpg"
+]
+        </script>
+        <script type="application/json" data-lens-alts>
+[
+  "Celestron telescope angled toward a bright sun over a grassy field",
+  "City sidewalk with classical stone building and blue-glass skyscrapers",
+  "Low-angle view of The Vessel in Hudson Yards",
+  "New York avenue looking toward the Empire State Building",
+  "Street photography moment from everyday city life",
+  "Architectural detail captured from street level",
+  "Statue of Liberty silhouetted against a pink sunset sky",
+  "Urban scene with layered buildings and street details",
+  "Hands holding Xbox controllers while playing a colorful game",
+  "Travel and city moment paused through the lens",
+  "The Vessel at dusk with warm orange staircase lights",
+  "Quiet outdoor detail that made me pause",
+  "Beach at sunset with white sea foam under soft sky",
+  "Landscape moment with soft natural light",
+  "Everyday scene framed from a different perspective",
+  "City or travel detail noticed in passing",
+  "Night street clock under the moon beside a brick building"
+]
+        </script>
       </div>
     </div>
   </section>
@@ -517,9 +793,48 @@
     <p class="reveal from-up" style="--d: 0ms;">© <span id="year"></span> <span data-profile="full_name">Jyothsna Karuparthi</span> • Built with HTML & CSS</p>
   </footer>
 
+  <button type="button" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    ↑
+  </button>
+
+  <div id="credentialModal" class="credential-modal" hidden>
+    <div class="credential-modal-backdrop" data-credential-close></div>
+    <div
+      class="credential-modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="credentialModalTitle"
+    >
+      <div class="credential-modal-toolbar">
+        <h3 id="credentialModalTitle">Credential</h3>
+        <button type="button" class="credential-modal-close" data-credential-close aria-label="Close credential preview">×</button>
+      </div>
+      <p class="credential-modal-hint" id="credentialModalHint">Click the credential to enlarge or shrink</p>
+      <div class="credential-modal-media" id="credentialModalMedia" tabindex="0" aria-label="Toggle credential size"></div>
+      <div class="credential-modal-nav" id="credentialModalNav" hidden>
+        <button type="button" class="photo-slider-btn" id="credentialModalPrev" aria-label="Previous photo">‹</button>
+        <div class="photo-slider-dots" id="credentialModalDots" aria-hidden="true"></div>
+        <span class="gallery-counter" id="credentialModalCounter" hidden aria-live="polite"></span>
+        <button type="button" class="photo-slider-btn" id="credentialModalNext" aria-label="Next photo">›</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const toggleScrollTopBtn = () => {
+      if (!scrollTopBtn) return;
+      scrollTopBtn.classList.toggle("is-visible", window.scrollY > 420);
+    };
+    scrollTopBtn?.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    window.addEventListener("scroll", toggleScrollTopBtn, { passive: true });
+    toggleScrollTopBtn();
 
     // Background canvas
     const particleCanvas = document.getElementById("particle-canvas");
@@ -785,6 +1100,307 @@
         }
       });
     }
+
+    // Credential / photo lightbox
+    const credentialModal = document.getElementById("credentialModal");
+    const credentialMedia = document.getElementById("credentialModalMedia");
+    const credentialTitle = document.getElementById("credentialModalTitle");
+    const credentialHint = document.getElementById("credentialModalHint");
+    const credentialNav = document.getElementById("credentialModalNav");
+    const credentialDots = document.getElementById("credentialModalDots");
+    const credentialCounter = document.getElementById("credentialModalCounter");
+    const credentialPrev = document.getElementById("credentialModalPrev");
+    const credentialNext = document.getElementById("credentialModalNext");
+    const credentialDialog = credentialModal?.querySelector(".credential-modal-dialog");
+    const credentialCloseBtns = credentialModal
+      ? [...credentialModal.querySelectorAll("[data-credential-close]")]
+      : [];
+
+    let galleryItems = [];
+    let galleryIndex = 0;
+    let lastFocus = null;
+
+    function getFocusable(container) {
+      if (!container) return [];
+      return [...container.querySelectorAll(
+        'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )].filter((el) => !el.hasAttribute("hidden") && el.offsetParent !== null);
+    }
+
+    function closeCredentialModal() {
+      if (!credentialModal) return;
+      credentialModal.hidden = true;
+      document.body.classList.remove("credential-modal-open");
+      credentialDialog?.classList.remove("is-zoomed");
+      if (credentialMedia) credentialMedia.innerHTML = "";
+      if (credentialDots) credentialDots.innerHTML = "";
+      if (credentialNav) credentialNav.hidden = true;
+      if (credentialCounter) {
+        credentialCounter.hidden = true;
+        credentialCounter.textContent = "";
+      }
+      galleryItems = [];
+      galleryIndex = 0;
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus();
+      }
+      lastFocus = null;
+    }
+
+    function renderGalleryItem(index) {
+      if (!credentialMedia || !galleryItems.length) return;
+      galleryIndex = (index + galleryItems.length) % galleryItems.length;
+      const item = galleryItems[galleryIndex];
+
+      credentialTitle.textContent = item.title || "Credential";
+      credentialDialog?.classList.remove("is-zoomed");
+      credentialMedia.innerHTML = "";
+
+      if (item.type === "pdf") {
+        const frame = document.createElement("iframe");
+        frame.src = item.src;
+        frame.title = item.title || "Credential PDF";
+        credentialMedia.appendChild(frame);
+      } else {
+        const image = document.createElement("img");
+        image.src = item.src;
+        image.alt = item.alt || item.title || "Credential";
+        image.onerror = () => {
+          console.error("Broken credential/lightbox image:", item.src);
+          credentialMedia.innerHTML = `<p class="credential-error">Image unavailable</p>`;
+        };
+        credentialMedia.appendChild(image);
+      }
+
+      if (credentialCounter && !credentialCounter.hidden) {
+        credentialCounter.textContent = `${galleryIndex + 1} / ${galleryItems.length}`;
+      }
+
+      if (credentialDots) {
+        [...credentialDots.querySelectorAll("[data-gallery-dot]")].forEach((dot, i) => {
+          dot.classList.toggle("is-active", i === galleryIndex);
+        });
+      }
+    }
+
+    function openCredentialGallery(items, fallbackTitle, startIndex = 0) {
+      if (!credentialModal || !credentialMedia || !credentialTitle || !items.length) return;
+
+      lastFocus = document.activeElement;
+      galleryItems = items.map((item) => ({
+        src: item.src,
+        type: item.type || "image",
+        title: item.title || fallbackTitle || "Credential",
+        alt: item.alt || item.title || fallbackTitle || "Credential"
+      }));
+      galleryIndex = Math.max(0, Math.min(startIndex, galleryItems.length - 1));
+
+      if (credentialHint) {
+        credentialHint.textContent = galleryItems.length > 1
+          ? "Use arrows to browse · click photo to enlarge or shrink"
+          : "Click the credential to enlarge or shrink";
+      }
+
+      if (credentialNav && credentialDots) {
+        if (galleryItems.length > 1) {
+          credentialNav.hidden = false;
+          if (galleryItems.length > 6) {
+            credentialDots.innerHTML = "";
+            if (credentialCounter) credentialCounter.hidden = false;
+          } else {
+            if (credentialCounter) credentialCounter.hidden = true;
+            credentialDots.innerHTML = galleryItems
+              .map((_, i) => `<button type="button" class="photo-slider-dot${i === galleryIndex ? " is-active" : ""}" data-gallery-dot="${i}" aria-label="Go to photo ${i + 1}"></button>`)
+              .join("");
+            credentialDots.querySelectorAll("[data-gallery-dot]").forEach((dot) => {
+              dot.addEventListener("click", () => renderGalleryItem(Number(dot.dataset.galleryDot)));
+            });
+          }
+        } else {
+          credentialNav.hidden = true;
+          credentialDots.innerHTML = "";
+          if (credentialCounter) credentialCounter.hidden = true;
+        }
+      }
+
+      renderGalleryItem(galleryIndex);
+      credentialModal.hidden = false;
+      document.body.classList.add("credential-modal-open");
+      credentialCloseBtns[credentialCloseBtns.length - 1]?.focus();
+    }
+
+    function openCredentialModal(src, type, title) {
+      openCredentialGallery([{ src, type: type || "image", title: title || "Credential" }], title);
+    }
+
+    document.querySelectorAll("[data-gallery]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        try {
+          const items = JSON.parse(trigger.dataset.gallery || "[]");
+          openCredentialGallery(items, trigger.dataset.credentialTitle || "Credential");
+        } catch (err) {
+          console.error("Invalid gallery data", err);
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-credential]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        openCredentialModal(
+          trigger.dataset.credential,
+          trigger.dataset.credentialType || "image",
+          trigger.dataset.credentialTitle || "Credential"
+        );
+      });
+    });
+
+    // Through My Lens fixed-frame carousel
+    document.querySelectorAll("[data-lens-carousel]").forEach((carousel) => {
+      const imageEl = carousel.querySelector("#lensImage");
+      const counterEl = carousel.querySelector("[data-lens-counter]");
+      const prevBtn = carousel.querySelector("[data-lens-prev]");
+      const nextBtn = carousel.querySelector("[data-lens-next]");
+      const openBtn = carousel.querySelector("[data-lens-open]");
+      const stage = carousel.querySelector(".lens-stage");
+
+      let images = [];
+      let alts = [];
+      try {
+        images = JSON.parse(carousel.querySelector("[data-lens-images]")?.textContent || "[]");
+        alts = JSON.parse(carousel.querySelector("[data-lens-alts]")?.textContent || "[]");
+      } catch (err) {
+        console.error("Invalid lens carousel data", err);
+      }
+      if (!images.length || !imageEl) return;
+
+      let index = 0;
+      const cache = new Map();
+
+      const preload = (src) => {
+        if (!src || cache.has(src)) return cache.get(src);
+        const promise = new Promise((resolve) => {
+          const img = new Image();
+          img.decoding = "async";
+          img.onload = () => resolve({ ok: true, img });
+          img.onerror = () => {
+            console.error("Broken lens carousel image:", src);
+            resolve({ ok: false, img });
+          };
+          img.src = src;
+        });
+        cache.set(src, promise);
+        return promise;
+      };
+
+      const galleryData = () => images.map((src, i) => ({
+        src,
+        title: alts[i] || `Photograph ${i + 1}`,
+        alt: alts[i] || `Photograph ${i + 1}`
+      }));
+
+      const show = async (nextIndex) => {
+        index = (nextIndex + images.length) % images.length;
+        const src = images[index];
+        const alt = alts[index] || `Photograph ${index + 1}`;
+        if (counterEl) counterEl.textContent = `${index + 1} / ${images.length}`;
+        stage?.classList.add("is-loading");
+        const result = await preload(src);
+        if (!result.ok) {
+          stage?.classList.add("is-broken");
+          imageEl.removeAttribute("src");
+          imageEl.alt = "Image unavailable";
+        } else {
+          stage?.classList.remove("is-broken");
+          imageEl.src = src;
+          imageEl.alt = alt;
+          if (imageEl.decode) {
+            try { await imageEl.decode(); } catch (_) { /* ignore */ }
+          }
+        }
+        stage?.classList.remove("is-loading");
+        preload(images[(index + 1) % images.length]);
+        preload(images[(index - 1 + images.length) % images.length]);
+      };
+
+      prevBtn?.addEventListener("click", () => show(index - 1));
+      nextBtn?.addEventListener("click", () => show(index + 1));
+      openBtn?.addEventListener("click", () => {
+        if (stage?.classList.contains("is-broken")) return;
+        openCredentialGallery(galleryData(), "Through My Lens", index);
+      });
+
+      preload(images[0]).then(() => {
+        preload(images[1 % images.length]);
+        preload(images[images.length - 1]);
+      });
+
+      const warmAll = () => images.forEach((src) => preload(src));
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver((entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            warmAll();
+            io.disconnect();
+          }
+        }, { rootMargin: "200px" });
+        io.observe(carousel);
+      } else {
+        warmAll();
+      }
+
+      show(0);
+    });
+
+    credentialPrev?.addEventListener("click", () => renderGalleryItem(galleryIndex - 1));
+    credentialNext?.addEventListener("click", () => renderGalleryItem(galleryIndex + 1));
+
+    credentialCloseBtns.forEach((el) => {
+      el.addEventListener("click", closeCredentialModal);
+    });
+
+    credentialMedia?.addEventListener("click", (event) => {
+      if (event.target.closest("iframe, .credential-error")) return;
+      credentialDialog?.classList.toggle("is-zoomed");
+    });
+
+    credentialMedia?.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        credentialDialog?.classList.toggle("is-zoomed");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!credentialModal || credentialModal.hidden) return;
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeCredentialModal();
+        return;
+      }
+
+      if (galleryItems.length > 1 && event.key === "ArrowLeft") {
+        event.preventDefault();
+        renderGalleryItem(galleryIndex - 1);
+      }
+      if (galleryItems.length > 1 && event.key === "ArrowRight") {
+        event.preventDefault();
+        renderGalleryItem(galleryIndex + 1);
+      }
+
+      if (event.key === "Tab" && credentialDialog) {
+        const focusable = getFocusable(credentialDialog);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
   </script>
 </body>
 </html>

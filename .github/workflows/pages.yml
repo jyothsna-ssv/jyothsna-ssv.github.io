@@ -27,9 +27,7 @@ jobs:
       - name: Prepare site files
         run: |
           mkdir -p _site/assets
-          cp index.html style.css admin.css me.html \
-            portfolio-admin.js portfolio-public.js site-config.js \
-            README.md .nojekyll _site/
+          cp index.html style.css README.md .nojekyll _site/
           cp assets/* _site/assets/
           ls -la _site _site/assets
 

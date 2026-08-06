@@ -46,7 +46,7 @@
   />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260806c" />
 </head>
 
 <body>
@@ -990,28 +990,33 @@
     const revealEls = document.querySelectorAll(".reveal");
     const staggerGroups = document.querySelectorAll(".reveal-stagger");
 
+    const revealNow = (el, delay = 0) => {
+      if (!el || el.classList.contains("is-visible")) return;
+      if (delay > 0) setTimeout(() => el.classList.add("is-visible"), delay);
+      else el.classList.add("is-visible");
+    };
+
+    const revealGroup = (group) => {
+      const step = Number(group.dataset.stagger || 160);
+      group.querySelectorAll(".reveal").forEach((el, idx) => revealNow(el, idx * step));
+    };
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
 
           if (entry.target.classList.contains("reveal-stagger")) {
-            const step = Number(entry.target.dataset.stagger || 160);
-            const children = entry.target.querySelectorAll(".reveal");
-
-            children.forEach((el, idx) => {
-              setTimeout(() => el.classList.add("is-visible"), idx * step);
-            });
-
+            revealGroup(entry.target);
             io.unobserve(entry.target);
             return;
           }
 
-          entry.target.classList.add("is-visible");
+          revealNow(entry.target);
           io.unobserve(entry.target);
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.01, rootMargin: "0px 0px 15% 0px" }
     );
 
     const staggerChildren = new Set();
@@ -1024,6 +1029,24 @@
     });
 
     staggerGroups.forEach((g) => io.observe(g));
+
+    // Hash links / first paint can leave sections blank; force-reveal nearby content.
+    const revealInView = () => {
+      revealEls.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const near = rect.top < window.innerHeight * 1.15 && rect.bottom > -80;
+        if (near) revealNow(el);
+      });
+      staggerGroups.forEach((group) => {
+        const rect = group.getBoundingClientRect();
+        const near = rect.top < window.innerHeight * 1.15 && rect.bottom > -80;
+        if (near) revealGroup(group);
+      });
+    };
+    requestAnimationFrame(revealInView);
+    window.addEventListener("hashchange", () => requestAnimationFrame(revealInView));
+    window.addEventListener("load", revealInView);
+    setTimeout(revealInView, 400);
 
     // Flip project cards without intercepting their action links.
     document.querySelectorAll("[data-flip-card]").forEach((card) => {

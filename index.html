@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Jyothsna Karuparthi | Software Engineer</title>
+  <meta name="title" content="Jyothsna Karuparthi | Software Engineer" />
+  <meta
+    name="description"
+    content="Portfolio of Jyothsna Karuparthi, a Software Engineer, Project Manager, and Full-Stack Developer based in Harrison, NJ."
+  />
+  <meta
+    name="keywords"
+    content="Software Engineer, Project Manager, Full-Stack Developer, Web Development, Portfolio, Harrison NJ"
+  />
+  <meta name="author" content="Jyothsna Karuparthi" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jyothsna Karuparthi | Software Engineer Portfolio" />
+  <meta
+    property="og:description"
+    content="Building reliable software that turns ideas into usable, scalable products."
+  />
+  <meta property="og:site_name" content="Jyothsna Karuparthi Portfolio" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jyothsna Karuparthi | Portfolio" />
+  <meta
+    name="twitter:description"
+    content="Software Engineer, Project Manager, and Full-Stack Developer."
+  />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#05070d" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- GLOBAL BACKGROUND -->
+  <div class="site-bg" aria-hidden="true">
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Jyothsna</a>
+
+      <div class="nav-center">
+        <div class="nav-links">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#education">Education</a>
+          <a class="nav-link" href="#accomplishments">Accomplishments</a>
+          <a class="nav-link" href="#activities">Activities</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a
+          id="resumeLink"
+          class="btn"
+          href="assets/Resume.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy reveal from-up" style="--d: 80ms;">
+        <p class="hero-kicker">Portfolio</p>
+
+        <h1 class="hero-title" data-profile="hero_name">
+          Jyothsna Karuparthi
+        </h1>
+
+        <p class="hero-role" data-profile="hero_roles">
+          Software Engineer · Project Manager · Full-Stack Developer
+        </p>
+
+        <p class="hero-desc" data-profile="tagline">
+          Building reliable software that turns ideas into usable, scalable products.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact</a>
+        </div>
+
+        <div class="hero-socials">
+          <a
+            data-profile-href="github_url"
+            href="https://github.com/jyothsna-ssv"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.11 3.29 9.45 7.86 10.98.57.1.78-.25.78-.55v-1.93c-3.2.7-3.87-1.37-3.87-1.37-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.3 1.2-3.1-.12-.29-.52-1.47.12-3.07 0 0 .98-.31 3.2 1.18a11.2 11.2 0 0 1 5.82 0c2.22-1.49 3.2-1.18 3.2-1.18.64 1.6.24 2.78.12 3.07.75.8 1.2 1.84 1.2 3.1 0 4.43-2.7 5.4-5.27 5.68.41.36.78 1.07.78 2.15v3.19c0 .3.2.66.79.55A11.52 11.52 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
+            </svg>
+          </a>
+
+          <a
+            data-profile-href="linkedin_url"
+            href="https://www.linkedin.com/in/karuparthi-jyothsna/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 23.5h4V7.98h-4V23.5zM8.5 7.98h3.8v2.12h.05c.53-1 1.82-2.12 3.75-2.12 4 0 4.74 2.63 4.74 6.05v7.47h-4v-6.62c0-1.58-.03-3.62-2.2-3.62-2.2 0-2.54 1.72-2.54 3.5v6.74h-4V7.98z"/>
+            </svg>
+          </a>
+
+          <a
+            data-profile-mailto="email"
+            href="mailto:karuparthi.jyothsna@gmail.com"
+            aria-label="Email"
+            title="Email"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2.2-.5L12 10.05 18.8 5H5.2ZM19 6.25l-6.4 4.75a1 1 0 0 1-1.2 0L5 6.25V18.5c0 .28.22.5.5.5h13a.5.5 0 0 0 .5-.5V6.25Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner glass-card">
+      <div class="about-grid">
+        <div class="about-photo reveal from-left" style="--d: 0ms;">
+          <img
+            src="assets/Profile.jpg"
+            alt="Jyothsna Karuparthi"
+          />
+        </div>
+
+        <div class="about-text reveal from-right" style="--d: 190ms;">
+          <h2>About</h2>
+
+          <p>
+            Somewhere between a quiet desk and a room full of ideas is where I work best.
+          </p>
+
+          <p>
+            Software, to me, is more than code on a screen. It begins with understanding a problem, asking thoughtful questions, and slowly turning something uncertain into a system people can actually use.
+          </p>
+
+          <p>
+            That curiosity has taken me across frontend interfaces, backend services, APIs, databases, payment workflows, and production deployments. More recently, it has meant contributing to payment portal functionality at MoneyGram, developing a full-stack commercial services platform with React, TypeScript, Supabase, PostgreSQL, and Stripe, and creating internal productivity tools using Python, Vue.js, PostgreSQL, and REST APIs.
+          </p>
+
+          <p>
+            But building the feature is only part of the work.
+          </p>
+
+          <p>
+            The details surrounding it matter just as much: understanding why it is needed, clarifying what is unclear, communicating across teams, testing complete workflows, tracing difficult bugs, and making sure the final result feels reliable—not only to the developer who built it, but to the person using it.
+          </p>
+
+          <p>
+            My approach is calm, practical, and ownership-driven. There is no need to be the loudest person in the room when thoughtful questions, dependable execution, and consistent work can speak over time.
+          </p>
+
+          <p>
+            Outside of code, public speaking, technical events, travel, and new experiences keep me curious. They introduce different perspectives, sharpen observation, and often change the way I think about people, products, and problems.
+          </p>
+
+          <p>
+            The goal is not simply to become someone who builds software.
+          </p>
+
+          <p>
+            It is to become someone who understands what should be built, brings people and ideas together, and helps meaningful products travel the full distance—from an early thought to a real outcome.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <h2 class="reveal from-up" style="--d: 0ms;">Skills</h2>
+
+      <div class="skill-block glass-card reveal from-up" style="--d: 0ms;">
+        <div class="skill-heading">Programming Languages</div>
+        <div class="skill-chips">
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">SQL</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skill-block glass-card reveal from-up" style="--d: 140ms;">
+        <div class="skill-heading">Frontend Development</div>
+        <div class="skill-chips">
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">Vue.js</span>
+          <span class="chip">Streamlit</span>
+        </div>
+      </div>
+
+      <div class="skill-block glass-card reveal from-up" style="--d: 280ms;">
+        <div class="skill-heading">Backend Development</div>
+        <div class="skill-chips">
+          <span class="chip">FastAPI</span>
+          <span class="chip">Flask</span>
+          <span class="chip">Django</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">GraphQL</span>
+          <span class="chip">Socket.io</span>
+          <span class="chip">WebSockets</span>
+          <span class="chip">JWT</span>
+        </div>
+      </div>
+
+      <div class="skill-block glass-card reveal from-up" style="--d: 420ms;">
+        <div class="skill-heading">Databases, Cloud & DevOps</div>
+        <div class="skill-chips">
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Redis</span>
+          <span class="chip">Supabase Auth</span>
+          <span class="chip">Supabase RLS</span>
+          <span class="chip">Supabase Edge Functions</span>
+          <span class="chip">AWS EC2</span>
+          <span class="chip">AWS S3</span>
+          <span class="chip">AWS Lambda</span>
+          <span class="chip">CI/CD</span>
+          <span class="chip">Docker</span>
+          <span class="chip">GitHub</span>
+        </div>
+      </div>
+
+      <div class="skill-block glass-card reveal from-up" style="--d: 560ms;">
+        <div class="skill-heading">AI/ML & Collaboration</div>
+        <div class="skill-chips">
+          <span class="chip">OpenAI API</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">RAG</span>
+          <span class="chip">NLP</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">MLflow</span>
+          <span class="chip">Agile</span>
+          <span class="chip">Jira</span>
+          <span class="chip">Product Workflows</span>
+          <span class="chip">Public Speaking</span>
+          <span class="chip">Problem Solving</span>
+          <span class="chip">Communication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-inner glass-card">
+      <h2 class="reveal from-up" style="--d: 0ms;">Experience</h2>
+
+      <div class="timeline-item reveal from-up" style="--d: 120ms;">
+        <h3>Software Engineer — MoneyGram</h3>
+        <p class="meta">New Jersey, USA • Jul 2026 – Present</p>
+        <ul>
+          <li>Develop and maintain backend functionality for MoneyGram web portals, supporting payment acceptance and core transaction workflows.</li>
+          <li>Diagnose portal issues, implement backend fixes, and maintain existing application functionality for reliable day-to-day operations.</li>
+          <li>Collaborate with engineering and client teams to clarify requirements, validate changes, review updates, and support ongoing portal stability.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal from-up" style="--d: 240ms;">
+        <h3>Software Engineer — Community Dreams Foundation</h3>
+        <p class="meta">New Jersey, USA • Jul 2025 – Jul 2026</p>
+        <ul>
+          <li>Designed and launched a B2B commercial-cleaning platform from concept to production using React, TypeScript, Supabase, PostgreSQL, and Stripe across client, administrator, and staff portals.</li>
+          <li>Translated stakeholder requirements into product workflows, sprint priorities, and technical deliverables while coordinating development, business, QA, and security teams.</li>
+          <li>Engineered a hybrid pricing system using square-footage tiers, frequency multipliers, industry adjustments, discounts, and administrator-controlled overrides to automate quote generation.</li>
+          <li>Architected the backend with 15+ Supabase Edge Functions for payments, webhooks, notifications, invitations, pricing, and rate-limited forms; secured three portals using RLS, JWT authentication, RBAC, and protected routes.</li>
+          <li>Validated 18 end-to-end workflows and automated GitHub Actions deployment to DreamHost, supporting a production launch with zero critical incidents and 550+ visits with warm prospects.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal from-up" style="--d: 360ms;">
+        <h3>Software Engineer Trainee — WebMD</h3>
+        <p class="meta">Navi Mumbai, India • Apr 2023 – Jul 2023</p>
+        <ul>
+          <li>Completed WebMD’s Helios full-stack engineering program, gaining hands-on experience with frontend development, REST services, Git, Docker, Kubernetes, Agile, Jira, and CI/CD concepts.</li>
+          <li>Developed an internal worklog calendar using Python, Vue.js, PostgreSQL, and REST APIs, centralizing employee activity records and simplifying daily worklog management.</li>
+          <li>Built a manager reporting interface that enabled managers to review employee worklogs and monitor team activity and progress.</li>
+          <li>Collaborated with engineers and managers in an Agile environment, using Jira and Git to manage tasks, troubleshoot issues, review changes, and communicate project progress.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal from-up" style="--d: 480ms;">
+        <h3>Software Engineer Intern — MinitzGo</h3>
+        <p class="meta">Hyderabad, India • Aug 2022 – Mar 2023</p>
+        <ul>
+          <li>Built product discovery features with React and TypeScript, integrating paginated catalog APIs, search filters, and infinite scrolling for uninterrupted browsing.</li>
+          <li>Set up real-time cart and inventory updates using WebSockets so stock levels and basket changes appeared instantly without page refreshes.</li>
+          <li>Enhanced authentication and checkout by adding form validation, securing routes, and making API error handling clearer for users.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <h2 class="reveal from-up" style="--d: 0ms;">Projects</h2>
+
+      <div class="projects-grid reveal-stagger" data-stagger="180">
+        <div class="project-card project-card--flippable reveal project-enter" data-flip-card tabindex="0" role="button" aria-label="Show ChopURL project preview" aria-pressed="false">
+          <div class="project-card-inner">
+            <div class="project-card-face project-card-front">
+              <h3>ChopURL</h3>
+              <p><strong>Short links, thoughtfully engineered.</strong></p>
+              <p>ChopURL is a full-stack tool for turning long, awkward URLs into clean, shareable links. Anyone can shorten a URL, while signed-in users get a private dashboard to create custom aliases, monitor clicks, and manage their links.</p>
+              <p>What began as a simple URL shortener became an exploration of real backend challenges: preventing duplicate aliases, preserving click counts during simultaneous requests, separating one user’s data from another’s, and automatically expiring old records.</p>
+              <p>I built the API with FastAPI and Redis, the interface with Vue 3, and authentication with Supabase. The project is deployed using Vercel and Render.</p>
+              <p class="meta"><strong>Built with:</strong> FastAPI · Redis · Vue 3 · Supabase Auth · Docker</p>
+              <div class="links">
+                <a href="https://chop-url.vercel.app/" target="_blank" rel="noopener">Explore the live app</a>
+                <a href="https://github.com/jyothsna-ssv/ChopURL" target="_blank" rel="noopener">View the source</a>
+              </div>
+            </div>
+            <div class="project-card-face project-card-back" aria-hidden="true" inert>
+              <img src="assets/chopurl-preview.png" alt="ChopURL interface showing sign-in, URL shortening, link management, and analytics dashboards" />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-card--flippable reveal project-enter" data-flip-card tabindex="0" role="button" aria-label="Show ArchAI project preview" aria-pressed="false">
+          <div class="project-card-inner">
+            <div class="project-card-face project-card-front">
+              <h3>ArchAI</h3>
+              <p><strong>Describe the system. See the architecture.</strong></p>
+              <p>ArchAI is a full-stack tool that transforms natural-language system requirements into clear, downloadable AWS architecture diagrams. Users describe the application they want to build, and ArchAI identifies the requested services, generates a structured architecture, validates its components and relationships, and renders the result as a professional PNG.</p>
+              <p>What began as a diagram generator became an exploration of a larger AI engineering challenge: model output can look correct while still omitting services, referencing invalid nodes, exposing internal class names, or producing disconnected architectures. I built a validation and repair pipeline that checks every supported requested service before allowing the diagram to be rendered.</p>
+              <p>I built the interface with React and TypeScript, the API with FastAPI and Pydantic, and the AI workflow with OpenAI structured output. Diagrams are rendered deterministically using Python Diagrams and Graphviz, while Docker provides a reproducible local setup. ArchAI runs locally and does not provision AWS resources.</p>
+              <p class="meta"><strong>Built with:</strong> React · TypeScript · FastAPI · Pydantic · OpenAI API · Python Diagrams · Graphviz · Docker</p>
+              <div class="links">
+                <a href="https://github.com/jyothsna-ssv/ArchAI" target="_blank" rel="noopener">View the source</a>
+              </div>
+            </div>
+            <div class="project-card-face project-card-back" aria-hidden="true" inert>
+              <img src="assets/ArchAI.png" alt="ArchAI architecture diagram" />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal project-enter">
+          <h3>CrowdShield: Real-Time Content Moderation System</h3>
+          <p>Built a GenAI-powered distributed moderation system with an async Redis-backed queue and worker pipeline that decouples ingestion from AI processing for reliability under burst traffic.</p>
+          <p>Integrated OpenAI API scoring, retry logic, structured audit logging, and PostgreSQL schemas to enable traceable AI-driven classification at scale.</p>
+          <p>Added WebSocket-based real-time monitoring and an admin dashboard for live visibility into moderation workflows.</p>
+          <p class="meta"><strong>Tools:</strong> Spring Boot, Redis, PostgreSQL, OpenAI, WebSockets</p>
+          <div class="links">
+            <a href="https://github.com/jyothsna-ssv/CrowdShield" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="section-inner glass-card">
+      <h2 class="reveal from-up" style="--d: 0ms;">Education</h2>
+
+      <div class="edu reveal from-up" style="--d: 140ms;">
+        <h3>Master of Science in Computer Science — New Jersey Institute of Technology</h3>
+        <p class="meta">New Jersey, USA • Jan 2024 – May 2025</p>
+      </div>
+
+      <div class="edu reveal from-up" style="--d: 280ms;">
+        <h3>Bachelor of Technology in Computer Science — Jawaharlal Nehru Technological University Hyderabad</h3>
+        <p class="meta">Hyderabad, India • Jun 2018 – Aug 2022</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMPLISHMENTS -->
+  <section id="accomplishments" class="section">
+    <div class="section-inner glass-card">
+      <h2 class="reveal from-up" style="--d:0ms;">Accomplishments</h2>
+
+      <div class="timeline-item reveal from-up" style="--d: 140ms;">
+        <h3>National Women Empowerment Award — AICTE LILAVATI</h3>
+        <p class="meta">Apr 2021</p>
+        <ul>
+          <li>Honored nationally for leading digital-literacy initiatives empowering 200+ women.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal from-up" style="--d: 280ms;">
+        <h3>Academic Excellence & Leadership Distinction</h3>
+        <p class="meta">Mar 2021</p>
+        <ul>
+          <li>Recognized for academic achievement and leadership in fostering innovation and student collaboration.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRA CURRICULAR ACTIVITIES -->
+  <section id="activities" class="section">
+    <div class="section-inner glass-card">
+      <h2 class="reveal from-up" style="--d: 0ms;">Leadership & Activities</h2>
+
+      <div class="timeline-item reveal from-up" style="--d: 140ms;">
+        <h3>Student Leadership & Public Speaking</h3>
+        <p class="meta">Hyderabad Institute of Technology and Management</p>
+        <ul>
+          <li>Served as Class Representative and Student HOD for Computer Science, improving communication between students and faculty.</li>
+          <li>Coordinated coding-club activities and helped organize hackathons, mentoring peers and supporting idea evaluation from planning to delivery.</li>
+          <li>Use public speaking and curiosity-driven exploration to connect technical ideas with people and everyday observations.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <h2 class="reveal from-up" style="--d: 0ms;">Send a Message</h2>
+
+      <form
+        id="contactForm"
+        class="contact-form reveal from-up"
+        style="--d: 140ms;"
+        action="mailto:karuparthi.jyothsna@gmail.com"
+        method="POST"
+        novalidate
+      >
+        <div class="contact-grid">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+
+        <button class="contact-btn" type="submit">
+          <span class="icon">✈</span>
+          Send Message
+        </button>
+
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-links reveal from-up" style="--d: 280ms;">
+        <a data-profile-email-link href="mailto:karuparthi.jyothsna@gmail.com">karuparthi.jyothsna@gmail.com</a>
+        <span class="dot">•</span>
+        <a data-profile-href="linkedin_url" href="https://www.linkedin.com/in/karuparthi-jyothsna/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="dot">•</span>
+        <a data-profile-href="github_url" href="https://github.com/jyothsna-ssv" target="_blank" rel="noopener">GitHub</a>
+        <span class="dot">•</span>
+        <a href="tel:+12017806856">201-780-6856</a>
+        <span class="dot">•</span>
+        <span data-profile="location">Harrison, NJ, USA</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="reveal from-up" style="--d: 0ms;">© <span id="year"></span> <span data-profile="full_name">Jyothsna Karuparthi</span> • Built with HTML & CSS</p>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="portfolio-public.js"></script>
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Background canvas
+    const particleCanvas = document.getElementById("particle-canvas");
+    const particleCtx = particleCanvas ? particleCanvas.getContext("2d") : null;
+
+    let particles = [];
+    let canvasWidth = 0;
+    let canvasHeight = 0;
+    let scrollTarget = 0;
+    let scrollCurrent = 0;
+    let animationId = null;
+
+    function randomRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function weightedEdgeX(width) {
+      const useLeft = Math.random() < 0.5;
+      if (useLeft) return randomRange(0, width * 0.28);
+      return randomRange(width * 0.72, width);
+    }
+
+    function createParticle(clusterType) {
+      const isEdgeCluster = clusterType === "edge";
+      const x = isEdgeCluster ? weightedEdgeX(canvasWidth) : randomRange(0, canvasWidth);
+      const y = randomRange(0, canvasHeight);
+
+      const centerClearZoneXStart = canvasWidth * 0.28;
+      const centerClearZoneXEnd = canvasWidth * 0.72;
+      const inCenterZone = x > centerClearZoneXStart && x < centerClearZoneXEnd && y < canvasHeight * 0.52;
+
+      if (inCenterZone && Math.random() < 0.8) {
+        return createParticle("edge");
+      }
+
+      return {
+        x,
+        y,
+        vx: randomRange(-0.08, 0.08),
+        vy: randomRange(-0.05, 0.05),
+        radius: isEdgeCluster ? randomRange(0.8, 1.9) : randomRange(0.4, 1.1),
+        alpha: isEdgeCluster ? randomRange(0.18, 0.52) : randomRange(0.08, 0.22),
+        offset: randomRange(0, Math.PI * 2),
+        clusterType
+      };
+    }
+
+    function buildParticles() {
+      if (!particleCanvas || !particleCtx) return;
+
+      canvasWidth = particleCanvas.width = window.innerWidth;
+      canvasHeight = particleCanvas.height = window.innerHeight;
+
+      const baseCount = Math.min(140, Math.floor((canvasWidth * canvasHeight) / 19000));
+      const edgeClusterCount = Math.floor(baseCount * 0.78);
+      const ambientCount = baseCount - edgeClusterCount;
+
+      particles = [];
+
+      for (let i = 0; i < edgeClusterCount; i++) {
+        particles.push(createParticle("edge"));
+      }
+
+      for (let i = 0; i < ambientCount; i++) {
+        particles.push(createParticle("ambient"));
+      }
+    }
+
+    function updateParticles(time) {
+      const t = time * 0.001;
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < -20 || p.x > canvasWidth + 20) p.vx *= -1;
+        if (p.y < -20 || p.y > canvasHeight + 20) p.vy *= -1;
+
+        const waveX = Math.sin(t + p.offset) * 8;
+        const waveY = Math.cos((t * 0.7) + p.offset) * 10;
+
+        p.drawX = p.x + waveX;
+        p.drawY = p.y + waveY - (scrollCurrent * (p.clusterType === "edge" ? 0.06 : 0.03));
+      }
+    }
+
+    function drawParticles(time) {
+      if (!particleCtx) return;
+
+      scrollCurrent += (scrollTarget - scrollCurrent) * 0.075;
+
+      particleCtx.clearRect(0, 0, canvasWidth, canvasHeight);
+      updateParticles(time);
+
+      for (let i = 0; i < particles.length; i++) {
+        const a = particles[i];
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const b = particles[j];
+          const dx = a.drawX - b.drawX;
+          const dy = a.drawY - b.drawY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          const threshold = (a.clusterType === "edge" && b.clusterType === "edge") ? 118 : 78;
+          if (dist > threshold) continue;
+
+          const intensity = 1 - dist / threshold;
+          const lineAlpha = (a.clusterType === "edge" && b.clusterType === "edge")
+            ? 0.085 * intensity
+            : 0.03 * intensity;
+
+          particleCtx.beginPath();
+          particleCtx.moveTo(a.drawX, a.drawY);
+          particleCtx.lineTo(b.drawX, b.drawY);
+          particleCtx.strokeStyle = `rgba(120, 170, 255, ${lineAlpha})`;
+          particleCtx.lineWidth = a.clusterType === "edge" && b.clusterType === "edge" ? 0.7 : 0.45;
+          particleCtx.stroke();
+        }
+      }
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        particleCtx.beginPath();
+        particleCtx.arc(p.drawX, p.drawY, p.radius, 0, Math.PI * 2);
+
+        if (p.clusterType === "edge") {
+          particleCtx.fillStyle = `rgba(215, 232, 255, ${p.alpha})`;
+        } else {
+          particleCtx.fillStyle = `rgba(180, 205, 255, ${p.alpha})`;
+        }
+
+        particleCtx.fill();
+      }
+
+      animationId = requestAnimationFrame(drawParticles);
+    }
+
+    function onScrollUpdate() {
+      scrollTarget = window.scrollY;
+    }
+
+    if (particleCanvas && particleCtx) {
+      buildParticles();
+      drawParticles(0);
+      window.addEventListener("resize", buildParticles);
+      window.addEventListener("scroll", onScrollUpdate, { passive: true });
+    }
+
+    // Scroll reveal + stagger groups
+    const revealEls = document.querySelectorAll(".reveal");
+    const staggerGroups = document.querySelectorAll(".reveal-stagger");
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          if (entry.target.classList.contains("reveal-stagger")) {
+            const step = Number(entry.target.dataset.stagger || 160);
+            const children = entry.target.querySelectorAll(".reveal");
+
+            children.forEach((el, idx) => {
+              setTimeout(() => el.classList.add("is-visible"), idx * step);
+            });
+
+            io.unobserve(entry.target);
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    const staggerChildren = new Set();
+    staggerGroups.forEach((g) => {
+      g.querySelectorAll(".reveal").forEach((el) => staggerChildren.add(el));
+    });
+
+    revealEls.forEach((el) => {
+      if (!staggerChildren.has(el)) io.observe(el);
+    });
+
+    staggerGroups.forEach((g) => io.observe(g));
+
+    // Flip project cards without intercepting their action links.
+    document.querySelectorAll("[data-flip-card]").forEach((card) => {
+      const front = card.querySelector(".project-card-front");
+      const back = card.querySelector(".project-card-back");
+
+      const toggleCard = () => {
+        const isFlipped = card.classList.toggle("is-flipped");
+        card.setAttribute("aria-pressed", String(isFlipped));
+        const cardTitle = card.querySelector("h3")?.textContent || "project";
+        card.setAttribute(
+          "aria-label",
+          isFlipped ? `Show ${cardTitle} project details` : `Show ${cardTitle} project preview`
+        );
+        front.setAttribute("aria-hidden", String(isFlipped));
+        back.setAttribute("aria-hidden", String(!isFlipped));
+        front.inert = isFlipped;
+        back.inert = !isFlipped;
+      };
+
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("a, button")) return;
+        toggleCard();
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.target !== card || (event.key !== "Enter" && event.key !== " ")) return;
+        event.preventDefault();
+        toggleCard();
+      });
+    });
+
+    // Contact form submit
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("formStatus");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        statusEl.textContent = "Preparing your email...";
+
+        try {
+          if (form.action.startsWith("mailto:")) {
+            const data = new FormData(form);
+            const name = data.get("name") || "";
+            const email = data.get("email") || "";
+            const subject = data.get("subject") || "Portfolio message";
+            const message = data.get("message") || "";
+            const body = [
+              `Name: ${name}`,
+              `Email: ${email}`,
+              "",
+              message
+            ].join("\n");
+
+            window.location.href = `mailto:karuparthi.jyothsna@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            statusEl.textContent = "Your email app should open with the message ready to send.";
+            form.reset();
+            return;
+          }
+
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          });
+
+          if (!res.ok) throw new Error("Request failed");
+
+          statusEl.textContent = "✅ Message sent! I’ll get back to you soon.";
+          form.reset();
+        } catch (err) {
+          statusEl.textContent = "❌ Something went wrong. Please try again later.";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

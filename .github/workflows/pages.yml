@@ -26,10 +26,13 @@ jobs:
 
       - name: Prepare site files
         run: |
-          mkdir -p _site/assets
+          mkdir -p _site
           cp index.html style.css README.md .nojekyll _site/
-          cp assets/* _site/assets/
-          ls -la _site _site/assets
+          # Copy nested folders too (e.g. assets/clicks/)
+          cp -R assets _site/
+          find _site -type f | sort
+          test -f _site/index.html
+          test -d _site/assets/clicks
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

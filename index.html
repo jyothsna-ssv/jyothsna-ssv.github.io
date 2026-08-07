@@ -46,7 +46,7 @@
   />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=20260806c" />
+  <link rel="stylesheet" href="style.css?v=20260806e" />
 </head>
 
 <body>
@@ -774,23 +774,23 @@
 
         <p id="formStatus" class="form-status" aria-live="polite"></p>
       </form>
-
-      <div class="contact-links reveal from-up" style="--d: 280ms;">
-        <a data-profile-email-link href="mailto:karuparthi.jyothsna@gmail.com">karuparthi.jyothsna@gmail.com</a>
-        <span class="dot">•</span>
-        <a data-profile-href="linkedin_url" href="https://www.linkedin.com/in/karuparthi-jyothsna/" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="dot">•</span>
-        <a data-profile-href="github_url" href="https://github.com/jyothsna-ssv" target="_blank" rel="noopener">GitHub</a>
-        <span class="dot">•</span>
-        <a href="tel:+12017806856">201-780-6856</a>
-        <span class="dot">•</span>
-        <span data-profile="location">Harrison, NJ, USA</span>
-      </div>
     </div>
   </section>
 
   <footer class="footer">
-    <p class="reveal from-up" style="--d: 0ms;">© <span id="year"></span> <span data-profile="full_name">Jyothsna Karuparthi</span> • Built with HTML & CSS</p>
+    <p class="footer-line reveal from-up" style="--d: 0ms;">
+      © <span id="year"></span> <span data-profile="full_name">Jyothsna Karuparthi</span>
+      <span class="dot">•</span>
+      <a data-profile-email-link href="mailto:karuparthi.jyothsna@gmail.com">karuparthi.jyothsna@gmail.com</a>
+      <span class="dot">•</span>
+      <a data-profile-href="linkedin_url" href="https://www.linkedin.com/in/karuparthi-jyothsna/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="dot">•</span>
+      <a data-profile-href="github_url" href="https://github.com/jyothsna-ssv" target="_blank" rel="noopener">GitHub</a>
+      <span class="dot">•</span>
+      <a href="tel:+12017806856">201-780-6856</a>
+      <span class="dot">•</span>
+      <span data-profile="location">Harrison, NJ, USA</span>
+    </p>
   </footer>
 
   <button type="button" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
@@ -821,7 +821,6 @@
   </div>
 
   <script>
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Scroll to top
